@@ -19,4 +19,8 @@ export default makeStyles((theme) => ({
   list: {
     height: '75vh', overflow: 'auto',
   },
+  title: {
+    marginBottom: theme.spacing(3),
+    color: '#3d3d3d' 
+  }
 }));

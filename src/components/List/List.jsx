@@ -15,30 +15,12 @@ const List = ({ places, childClicked, isLoading }) => {
 
     return(
         <div className={classes.container}>
-            <Typography variant="h4">Restaurants, Hotels & Attractions around you</Typography>
+            <Typography variant="h4" className={classes.title}>Restaurants around you: </Typography>
             {isLoading ? (
                 <div className={classes.loading}>
                     <CircularProgress size="5rem" />
                 </div>
             ) : (
-                    <>
-                        <FormControl className={classes.formControl}>
-                            <InputLabel>Type</InputLabel>
-                            <Select value={type} onChange={(e) => setType(e.target.value)}>
-                                <MenuItem value="restaurants">restaurants</MenuItem>
-                                <MenuItem value="hotels">hotels</MenuItem>
-                                <MenuItem value="attractions">attractions</MenuItem>
-                            </Select>                
-                        </FormControl>
-                        <FormControl className={classes.formControl}>
-                            <InputLabel>Rating</InputLabel>
-                            <Select value={rating} onChange={(e) => setRating(e.target.value)}>
-                                <MenuItem value={0}>All</MenuItem>
-                                <MenuItem value={3}>Above 3.0</MenuItem>
-                                <MenuItem value={4}>Above 4.0</MenuItem>
-                                <MenuItem value={4.5}>Above 4.5</MenuItem>
-                            </Select>                
-                        </FormControl>
                         <Grid container spacing={3} className={classes.list}>
                             {places?.map((place, i) => (
                                 <Grid item key={i} xs={12}>
@@ -49,8 +31,7 @@ const List = ({ places, childClicked, isLoading }) => {
                                     />
                                 </Grid>
                             ))}
-                        </Grid>               
-                    </>
+                        </Grid>              
                 )}
          </div>
     );
